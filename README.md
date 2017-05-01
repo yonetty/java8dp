@@ -119,3 +119,14 @@ Function<Integer, Approval> head = new ChainOfResponsibility<Integer, Approval>(
 
 Approval approval = head.apply(10000);
 ```
+
+## Null Object pattern
+When you compose functions one after another, it's good to start with a function 
+which actually do nothing. (i.e. use `Function#identity()`)  
+This static method literally act as the identity element in mathematics.
+Therefore you don't have to care about null checking.
+
+`example.java8dp.misc.nullobject.java8.DateTimeBuilder` is an example of using 
+`Function#identity()` as a functional version of `Null Object pattern` described above.
+
+
